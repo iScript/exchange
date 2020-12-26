@@ -1,0 +1,9 @@
+17:37:37.552 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.104 with PID 85743 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
+17:37:37.559 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+17:37:38.558 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+17:37:38.559 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+17:37:38.559 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+17:37:38.617 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17:37:39.405 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+17:37:39.440 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 2.265 seconds (JVM running for 2.899)
+17:37:46.187 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
