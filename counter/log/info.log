@@ -1,18 +1,78 @@
-10:28:25.242 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.103 with PID 86842 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
-10:28:25.259 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
-10:28:26.484 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
-10:28:26.484 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-10:28:26.485 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
-10:28:26.543 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-10:28:27.555 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
-10:28:27.588 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 2.783 seconds (JVM running for 3.51)
-10:29:39.435 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-10:32:48.407 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.103 with PID 86922 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
-10:32:48.414 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
-10:32:49.407 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
-10:32:49.408 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-10:32:49.408 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
-10:32:49.458 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-10:32:50.268 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
-10:32:50.306 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 2.251 seconds (JVM running for 2.838)
-10:32:56.935 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:19:01.919 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36605 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:19:11.963 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:19:13.599 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:19:13.600 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:19:13.600 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:19:13.672 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:19:14.838 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:19:14.874 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 28.5 seconds (JVM running for 34.302)
+09:20:11.568 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:20:11.624 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:20:12.211 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:20:21.248 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:20:21.251 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09:20:50.631 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36643 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:21:00.649 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:21:01.854 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:21:01.854 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:21:01.855 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:21:01.917 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:21:02.844 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:21:02.878 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.76 seconds (JVM running for 33.48)
+09:24:28.992 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:24:29.031 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:24:29.551 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:33:21.512 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:33:21.516 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09:33:50.508 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36755 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:34:00.530 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:34:01.754 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:34:01.754 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:34:01.755 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:34:01.811 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:34:02.817 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:34:02.850 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.796 seconds (JVM running for 33.446)
+09:36:09.230 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:36:09.269 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:36:09.579 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:37:04.757 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:37:04.760 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09:37:33.520 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36812 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:37:43.540 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:37:44.627 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:37:44.628 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:37:44.628 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:37:44.687 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:37:45.581 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:37:45.614 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.577 seconds (JVM running for 33.248)
+09:38:15.345 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:38:15.392 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:38:18.546 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:38:47.432 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:38:47.435 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09:39:16.752 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36858 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:39:26.767 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:39:27.969 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:39:27.970 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:39:27.970 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:39:28.031 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:39:28.936 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:39:28.969 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.695 seconds (JVM running for 33.361)
+09:39:36.031 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:39:36.069 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:39:36.429 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:49:08.042 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:49:08.047 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+09:49:37.199 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36977 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:49:47.217 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:49:48.291 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:49:48.291 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:49:48.292 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:49:48.347 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:49:49.262 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:49:49.296 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.546 seconds (JVM running for 33.206)
+09:49:52.856 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:49:52.898 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:49:53.444 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:50:14.632 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:50:14.636 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -1,17 +1,38 @@
-17:27:38.457 [http-nio-8090-exec-1] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379] with root cause
-java.net.ConnectException: Connection refused
-	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method) ~[?:1.8.0_271]
-	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:715) ~[?:1.8.0_271]
-	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330) ~[netty-transport-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334) ~[netty-transport-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:707) ~[netty-transport-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) ~[netty-transport-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) ~[netty-transport-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) ~[netty-transport-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989) ~[netty-common-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.55.Final.jar:4.1.55.Final]
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.55.Final.jar:4.1.55.Final]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_271]
+10:28:25.242 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.103 with PID 86842 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
+10:28:25.259 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+10:28:26.484 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+10:28:26.484 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+10:28:26.485 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+10:28:26.543 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+10:28:27.555 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+10:28:27.588 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 2.783 seconds (JVM running for 3.51)
+10:29:39.435 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+10:32:48.407 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.103 with PID 86922 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
+10:32:48.414 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+10:32:49.407 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+10:32:49.408 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+10:32:49.408 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+10:32:49.458 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+10:32:50.268 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+10:32:50.306 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 2.251 seconds (JVM running for 2.838)
+10:32:56.935 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:16:56.908 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30101 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:17:06.928 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:17:08.395 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:17:08.396 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:17:08.396 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:17:08.465 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:17:09.558 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:17:09.600 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 28.293 seconds (JVM running for 34.355)
+14:17:42.168 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30139 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:17:52.187 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:17:53.260 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:17:53.261 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:17:53.261 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:17:53.315 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:17:54.207 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:17:54.240 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.567 seconds (JVM running for 33.227)
+14:18:16.626 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 14:18:16.663 [http-nio-8090-exec-1] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
 	at com.ykq.counter.util.DbUtil.queryAccount(DbUtil.java:39) ~[classes/:?]
@@ -69,6 +90,15 @@ java.lang.NullPointerException: null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+14:20:00.688 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30199 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:20:10.705 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:20:11.814 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:20:11.814 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:20:11.815 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:20:11.872 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:20:12.763 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:20:12.796 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.549 seconds (JVM running for 33.212)
+14:20:22.451 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 14:20:22.482 [http-nio-8090-exec-1] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
 	at com.ykq.counter.util.DbUtil.queryAccount(DbUtil.java:40) ~[classes/:?]
@@ -126,6 +156,22 @@ java.lang.NullPointerException: null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+14:30:38.249 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30489 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:30:48.269 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:30:49.339 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:30:49.340 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:30:49.341 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:30:49.395 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:30:49.446 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+14:31:57.111 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30526 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:32:07.128 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:32:08.209 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:32:08.210 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:32:08.211 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:32:08.269 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:32:09.177 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:32:09.213 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.545 seconds (JVM running for 33.218)
+14:32:13.787 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 14:32:13.832 [http-nio-8090-exec-1] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.PersistenceException: 
 ### Error querying database.  Cause: java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for userMapper.queryAccount
 ### Cause: java.lang.IllegalArgumentException: Mapped Statements collection does not contain value for userMapper.queryAccount] with root cause
@@ -198,6 +244,16 @@ java.lang.IllegalArgumentException: Mapped Statements collection does not contai
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+14:51:56.512 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30675 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:52:06.532 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:52:07.600 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:52:07.600 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:52:07.601 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:52:07.655 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:52:08.550 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:52:08.583 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.511 seconds (JVM running for 33.16)
+14:52:22.299 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:52:22.341 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
 14:52:23.376 [http-nio-8090-exec-1] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
 java.sql.SQLException: path to '~/Desktop/code/exchange/counter/counter.db': '/Users/sig/Desktop/code/exchange/counter/~' does not exist
 	at org.sqlite.SQLiteConnection.open(SQLiteConnection.java:215) ~[sqlite-jdbc-3.34.0.jar:?]
@@ -387,3 +443,42 @@ java.sql.SQLException: path to '~/Desktop/code/exchange/counter/counter.db': '/U
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+14:53:44.202 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30725 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:53:54.219 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:53:55.380 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:53:55.380 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:53:55.381 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:53:55.438 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:53:56.381 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:53:56.415 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.726 seconds (JVM running for 33.387)
+14:54:33.444 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:54:33.482 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:54:33.897 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:55:14.657 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:55:14.660 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:55:43.513 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30762 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:55:53.534 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:55:54.617 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:55:54.618 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:55:54.618 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:55:54.675 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:55:55.581 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:55:55.618 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.559 seconds (JVM running for 33.218)
+14:55:57.503 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:55:57.543 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:55:58.536 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:00:58.929 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:00:58.933 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:01:28.418 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 30831 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+15:01:38.441 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+15:01:39.551 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+15:01:39.551 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:01:39.552 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+15:01:39.616 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:01:40.525 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+15:01:40.558 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.687 seconds (JVM running for 33.413)
+15:01:44.242 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:01:44.277 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:01:46.075 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17:34:00.854 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+17:34:00.858 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

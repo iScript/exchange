@@ -2,11 +2,16 @@ package com.ykq.counter.util;
 
 import com.google.common.collect.ImmutableMap;
 import com.ykq.counter.bean.res.Account;
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
+@Slf4j
+//第二步
+@Component
 public class DbUtil {
     private static DbUtil dbUtil = null;
 
@@ -29,6 +34,7 @@ public class DbUtil {
     //第二步
     @PostConstruct
     private void init() {
+
         dbUtil = new DbUtil();
         //第四部
         dbUtil.setSqlSessionTemplate(this.sqlSessionTemplate);
@@ -36,9 +42,10 @@ public class DbUtil {
 
     //////////////////////////////身份认证/////////////////////////////////////
     public static Account queryAccount(long uid, String password) {
+        System.out.println(dbUtil);
         return dbUtil.getSqlSessionTemplate().selectOne(
                 "userMapper.queryAccount",
-                ImmutableMap.of("UId", uid, "Password", password)
+                ImmutableMap.of("uid", uid, "password", password)
         );
     }
 
@@ -47,9 +54,9 @@ public class DbUtil {
         dbUtil.getSqlSessionTemplate().update(
                 "userMapper.updateAccountLoginTime",
                 ImmutableMap.of(
-                        "UId", uid,
-                        "ModifyDate", nowDate,
-                        "ModifyTime", nowTime
+                        "uid", uid,
+                        "modifyDate", nowDate,
+                        "modifyTime", nowTime
                 )
         );
     }
