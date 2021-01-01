@@ -3,6 +3,7 @@ package com.ykq.counter.util;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.ykq.counter.bean.res.Account;
+<<<<<<< HEAD
 import com.ykq.counter.bean.res.OrderInfo;
 import com.ykq.counter.bean.res.PosiInfo;
 import com.ykq.counter.bean.res.TradeInfo;
@@ -12,10 +13,19 @@ import org.apache.commons.lang3.StringUtils;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
+=======
+import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+>>>>>>> 7c59313b902081033db8fbafe6ed41e838c250b2
 
 import javax.annotation.PostConstruct;
 import java.util.List;
 
+@Slf4j
+//第二步
+@Component
 public class DbUtil {
     private static DbUtil dbUtil = null;
 
@@ -38,6 +48,7 @@ public class DbUtil {
     //第二步
     @PostConstruct
     private void init() {
+
         dbUtil = new DbUtil();
         //第四部
         dbUtil.setSqlSessionTemplate(this.sqlSessionTemplate);
@@ -45,9 +56,10 @@ public class DbUtil {
 
     //////////////////////////////身份认证/////////////////////////////////////
     public static Account queryAccount(long uid, String password) {
+        System.out.println(dbUtil);
         return dbUtil.getSqlSessionTemplate().selectOne(
                 "userMapper.queryAccount",
-                ImmutableMap.of("UId", uid, "Password", password)
+                ImmutableMap.of("uid", uid, "password", password)
         );
     }
 
@@ -56,9 +68,9 @@ public class DbUtil {
         dbUtil.getSqlSessionTemplate().update(
                 "userMapper.updateAccountLoginTime",
                 ImmutableMap.of(
-                        "UId", uid,
-                        "ModifyDate", nowDate,
-                        "ModifyTime", nowTime
+                        "uid", uid,
+                        "modifyDate", nowDate,
+                        "modifyTime", nowTime
                 )
         );
     }

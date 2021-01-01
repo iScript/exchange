@@ -7,6 +7,7 @@ import com.ykq.counter.cache.CacheType;
 import com.ykq.counter.cache.RedisStringCache;
 import com.ykq.counter.service.AccountService;
 import com.ykq.counter.util.Captcha;
+import com.ykq.counter.util.DbUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,5 +83,16 @@ public class LoginController {
         }
 
     }
+
+    @RequestMapping("/test")
+    public String test(){
+        Account account = DbUtil.queryAccount(3, "002");
+        System.out.println(account);
+
+        return "";
+
+    }
+
+
 
 }

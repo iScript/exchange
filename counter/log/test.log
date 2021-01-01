@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 10:32:48.407 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.103 with PID 86922 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
 10:32:48.414 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
 10:32:49.407 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
@@ -309,3 +310,114 @@ io.lettuce.core.RedisConnectionException: Connection closed prematurely
 17:04:51.490 [lettuce-nioEventLoop-4-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
 17:05:21.589 [lettuce-eventExecutorLoop-1-5] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was localhost:6379
 17:05:21.592 [lettuce-nioEventLoop-4-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [localhost:6379]: Connection refused: localhost/127.0.0.1:6379
+=======
+09:49:37.199 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 36977 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+09:49:47.216 [restartedMain] DEBUG com.ykq.counter.CounterApplication - Running with Spring Boot v2.4.1, Spring v5.3.2
+09:49:47.217 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+09:49:47.939 [restartedMain] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+09:49:48.291 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+09:49:48.291 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:49:48.292 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+09:49:48.347 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:49:48.430 [restartedMain] DEBUG com.zaxxer.hikari.HikariConfig - Driver class org.sqlite.JDBC found in Thread context class loader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@63144fd1
+09:49:48.593 [restartedMain] DEBUG io.netty.util.internal.logging.InternalLoggerFactory - Using SLF4J as the default logging framework
+09:49:48.597 [restartedMain] DEBUG io.lettuce.core.resource.DefaultClientResources - -Dio.netty.eventLoopThreads: 8
+09:49:48.603 [restartedMain] DEBUG io.lettuce.core.resource.DefaultEventLoopGroupProvider - Creating executor io.netty.util.concurrent.DefaultEventExecutorGroup
+09:49:48.621 [restartedMain] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+09:49:48.621 [restartedMain] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+09:49:48.626 [restartedMain] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+09:49:48.626 [restartedMain] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+09:49:48.628 [restartedMain] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@77e4a49b
+09:49:48.630 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - Platform: MacOS
+09:49:48.631 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+09:49:48.632 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 8
+09:49:48.632 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+09:49:48.633 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+09:49:48.633 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+09:49:48.634 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: available
+09:49:48.634 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+09:49:48.634 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+09:49:48.634 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): available
+09:49:48.635 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+09:49:48.635 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /var/folders/mv/pplhljh94fgdpg70pb__rk2h0000gn/T (java.io.tmpdir)
+09:49:48.635 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+09:49:48.636 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: 3817865216 bytes
+09:49:48.636 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+09:49:48.637 [restartedMain] DEBUG io.netty.util.internal.CleanerJava6 - java.nio.ByteBuffer.cleaner(): available
+09:49:48.637 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+09:49:48.638 [restartedMain] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+09:49:48.694 [restartedMain] DEBUG reactor.util.Loggers - Using Slf4j logging framework
+09:49:48.714 [restartedMain] DEBUG io.lettuce.core.resource.DefaultClientResources - LatencyUtils/HdrUtils are not available, metrics are disabled
+09:49:49.262 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+09:49:49.296 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 27.546 seconds (JVM running for 33.206)
+09:49:52.856 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:49:52.892 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+09:49:52.894 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+09:49:52.894 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+09:49:52.895 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................."org.sqlite.JDBC"
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+09:49:52.896 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlite:/Users/sig/Desktop/code/exchange/counter/counter.db
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+09:49:52.897 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+09:49:52.898 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+09:49:52.898 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+09:49:52.898 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+09:49:52.898 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+09:49:52.898 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - username........................none
+09:49:52.898 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+09:49:52.898 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:49:53.443 [http-nio-8090-exec-1] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@71242a08
+09:49:53.444 [http-nio-8090-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:49:53.451 [http-nio-8090-exec-1] DEBUG userMapper.queryAccount - ==>  Preparing: select * from `t_user` where uid = ? and password = ? 
+09:49:53.464 [http-nio-8090-exec-1] DEBUG userMapper.queryAccount - ==> Parameters: 3(Long), 002(String)
+09:49:53.482 [http-nio-8090-exec-1] DEBUG userMapper.queryAccount - <==      Total: 1
+09:49:53.548 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+09:49:53.549 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@236a9bb5
+09:49:53.549 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@2dad61a8
+09:49:53.550 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@2992f0c5
+09:49:53.550 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@6c906b93
+09:49:53.551 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@1b50f287
+09:49:53.551 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@5d366064
+09:49:53.552 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@631ca7df
+09:49:53.552 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@cbf94dc
+09:49:53.553 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@10679b06
+09:49:53.553 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+09:50:14.619 [SpringContextShutdownHook] DEBUG io.lettuce.core.AbstractRedisClient - Initiate shutdown (100, 100, MILLISECONDS)
+09:50:14.625 [SpringContextShutdownHook] DEBUG io.lettuce.core.resource.DefaultClientResources - Initiate shutdown (0, 2, SECONDS)
+09:50:14.627 [SpringContextShutdownHook] DEBUG io.lettuce.core.resource.DefaultEventLoopGroupProvider - Initiate shutdown (0, 2, SECONDS)
+09:50:14.632 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+09:50:14.632 [SpringContextShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+09:50:14.633 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@71242a08: (connection evicted)
+09:50:14.634 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@236a9bb5: (connection evicted)
+09:50:14.634 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@2dad61a8: (connection evicted)
+09:50:14.634 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@2992f0c5: (connection evicted)
+09:50:14.634 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@6c906b93: (connection evicted)
+09:50:14.634 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@1b50f287: (connection evicted)
+09:50:14.635 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@5d366064: (connection evicted)
+09:50:14.635 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@631ca7df: (connection evicted)
+09:50:14.635 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@cbf94dc: (connection evicted)
+09:50:14.635 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection org.sqlite.jdbc4.JDBC4Connection@10679b06: (connection evicted)
+09:50:14.636 [SpringContextShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+09:50:14.636 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+>>>>>>> 7c59313b902081033db8fbafe6ed41e838c250b2
