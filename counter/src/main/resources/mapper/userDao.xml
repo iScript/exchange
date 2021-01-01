@@ -10,4 +10,8 @@
         update t_user set modifyDate=#{modifyDate},modifyTime=#{modifyTime} where uid=#{uid}
     </update>
 
+    <update id="updatePwd" parameterType="hashmap" >
+        update t_user set password=#{newPwd} where uid=#{uid} and password=#{oldPwd}
+    </update>
+
 </mapper>

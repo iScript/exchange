@@ -1,6 +1,7 @@
 package com.ykq.counter.service;
 
 import com.ykq.counter.bean.res.Account;
+import com.ykq.counter.bean.res.CounterRes;
 import com.ykq.counter.cache.CacheType;
 import com.ykq.counter.cache.RedisStringCache;
 import com.ykq.counter.util.DbUtil;
@@ -8,9 +9,12 @@ import com.ykq.counter.util.JsonUtil;
 import com.ykq.counter.util.TimeFormatUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 import thirdpart.uuid.GudyUuid;
 
 import java.util.Date;
+
+import static com.ykq.counter.bean.res.CounterRes.RELOGIN;
 
 @Component
 public class AccountServiceImpl implements AccountService {
@@ -73,6 +77,12 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
+    @RequestMapping("/loginfail")
+    public CounterRes loginFail(){
+        return new CounterRes(RELOGIN,"请重新登陆",null);
+    }
+
+
     //清除缓存登录信息
     @Override
     public boolean logout(String token) {
@@ -82,8 +92,8 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public boolean updatePwd(long uid, String oldPwd, String newPwd) {
-        //int res = DbUtil.updatePwd(uid,oldPwd,newPwd);
-        int res = 0;
+        int res = DbUtil.updatePwd(uid,oldPwd,newPwd);
+
         return res == 0 ? false : true;
     }
 }
