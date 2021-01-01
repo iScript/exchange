@@ -64,6 +64,7 @@ public class DbUtil {
 
     public static void updateLoginTime(long uid, String nowDate,
                                        String nowTime) {
+        System.out.println(uid+"-"+nowDate+"-"+nowTime);
         dbUtil.getSqlSessionTemplate().update(
                 "userMapper.updateAccountLoginTime",
                 ImmutableMap.of(
@@ -109,7 +110,9 @@ public class DbUtil {
         //查缓存
         String suid = Long.toString(uid);
         String posiS = RedisStringCache.get(suid, CacheType.POSI);
-        if (StringUtils.isEmpty(posiS)) {
+        //if (StringUtils.isEmpty(posiS)) {
+        if (true) {
+            System.out.println(uid);
             //未查到 查库
             List<PosiInfo> tmp = dbUtil.getSqlSessionTemplate().selectList(
                     "orderMapper.queryPosi",
@@ -129,7 +132,7 @@ public class DbUtil {
 
     public static PosiInfo getPosi(long uid, int code) {
         return dbUtil.getSqlSessionTemplate().selectOne("orderMapper.queryPosi",
-                ImmutableMap.of("UId", uid, "Code", code));
+                ImmutableMap.of("uid", uid, "code", code));
     }
 
     //////////////////////////////委托类////////////////////////////////////////
@@ -141,7 +144,7 @@ public class DbUtil {
             //未查到 查库
             List<OrderInfo> tmp = dbUtil.getSqlSessionTemplate().selectList(
                     "orderMapper.queryOrder",
-                    ImmutableMap.of("UId", uid)
+                    ImmutableMap.of("uid", uid)
             );
             List<OrderInfo> result =
                     CollectionUtils.isEmpty(tmp) ? Lists.newArrayList()
@@ -164,7 +167,7 @@ public class DbUtil {
             //未查到 查库
             List<TradeInfo> tmp = dbUtil.getSqlSessionTemplate().selectList(
                     "orderMapper.queryTrade",
-                    ImmutableMap.of("UId", uid)
+                    ImmutableMap.of("uid", uid)
             );
             List<TradeInfo> result =
                     CollectionUtils.isEmpty(tmp) ? Lists.newArrayList()

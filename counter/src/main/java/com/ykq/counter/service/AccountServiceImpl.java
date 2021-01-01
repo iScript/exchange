@@ -35,6 +35,8 @@ public class AccountServiceImpl implements AccountService {
             return null;
         }
         RedisStringCache.remove(captchaId,CacheType.CAPTCHA);
+
+        System.out.println(uid+"-"+password);
         //3.比对数据库用户名和密码
         Account account = DbUtil.queryAccount(uid, password);
         if(account == null){

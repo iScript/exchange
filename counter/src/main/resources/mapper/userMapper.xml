@@ -6,8 +6,8 @@
         select * from `t_user` where uid = #{uid} and password = #{password}
     </select>
 
-    <update id="updateAccountLoginTIme" parameterType="hashmap"  >
-        update t_user set modifyDate=#{modifyDate},modifyTime=#{modifyTime} where uid=#{uid}
+    <update id="updateAccountLoginTime" parameterType="hashmap"  >
+        update t_user set lastLoginDate=#{modifyDate},lastLoginTime=#{modifyTime} where uid=#{uid}
     </update>
 
     <update id="updatePwd" parameterType="hashmap" >

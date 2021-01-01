@@ -6,7 +6,7 @@ public enum CacheType {
 
     ACCOUNT("account:"),
 
-    ORDER("order:"),
+    ORDER("order1:"),
 
     TRADE("trade:"),
 
