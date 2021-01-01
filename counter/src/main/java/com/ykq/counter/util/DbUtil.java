@@ -3,7 +3,6 @@ package com.ykq.counter.util;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.ykq.counter.bean.res.Account;
-<<<<<<< HEAD
 import com.ykq.counter.bean.res.OrderInfo;
 import com.ykq.counter.bean.res.PosiInfo;
 import com.ykq.counter.bean.res.TradeInfo;
@@ -12,13 +11,13 @@ import com.ykq.counter.cache.RedisStringCache;
 import org.apache.commons.lang3.StringUtils;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.CollectionUtils;
-=======
-import lombok.extern.slf4j.Slf4j;
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
->>>>>>> 7c59313b902081033db8fbafe6ed41e838c250b2
+import org.springframework.util.CollectionUtils;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+
 
 import javax.annotation.PostConstruct;
 import java.util.List;
