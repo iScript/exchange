@@ -2,6 +2,7 @@ package com.ykq.counter.util;
 
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.ykq.counter.bean.res.Account;
 import com.ykq.counter.bean.res.OrderInfo;
 import com.ykq.counter.bean.res.PosiInfo;
@@ -15,12 +16,13 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import lombok.extern.slf4j.Slf4j;
-
-
+import thirdpart.order.OrderCmd;
+import thirdpart.order.OrderStatus;
 
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 //第二步
@@ -179,6 +181,39 @@ public class DbUtil {
             //查到 命中缓存
             return JsonUtil.fromJsonArr(tradeS, TradeInfo.class);
         }
+    }
+
+    //////////////////////////////订单处理类///////////////////////////////////////
+    public static int saveOrder(OrderCmd orderCmd) {
+        Map<String, Object> param = Maps.newHashMap();
+        param.put("uid", orderCmd.uid);
+        param.put("code", orderCmd.code);
+        param.put("direction", orderCmd.direction.getDirection());
+        param.put("type", orderCmd.orderType.getType());
+        param.put("price", orderCmd.price);
+        param.put("ocount", orderCmd.volume);   //委托量
+        param.put("tcount", 0);     // 成交量
+        param.put("status", OrderStatus.NOT_SET.getCode());
+
+        param.put("data", TimeFormatUtil.yyyyMMdd(orderCmd.timestamp));
+        param.put("time", TimeFormatUtil.hhMMss(orderCmd.timestamp));
+        //System.out.println(TimeFormatUtil.yyyyMMdd(orderCmd.timestamp));
+        int count = dbUtil.getSqlSessionTemplate().insert(
+                "orderMapper.saveOrder", param
+        );
+        //判断是否成功
+        if (count > 0) {
+            return Integer.parseInt(param.get("id").toString());
+        } else {
+            return -1;
+        }
+    }
+
+
+    //////////////////////////////股票信息查询///////////////////////////////////////
+    public static List<Map<String, Object>> queryAllSotckInfo() {
+        return dbUtil.getSqlSessionTemplate()
+                .selectList("stockMapper.queryStock");
     }
 
 }

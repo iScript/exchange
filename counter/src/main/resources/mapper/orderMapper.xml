@@ -23,5 +23,13 @@
         where t.uid=#{uid} and t.code = s.code
     </select>
 
+    <insert id="saveOrder" parameterType="Map">
+        insert into t_order(uid,code,direction,type,price,ocount,status,date,time)
+        values(#{uid},#{code},#{direction},#{type},#{price},#{ocount},#{status},#{date},#{time})
+        <selectKey keyColumn="id" resultType="int" keyProperty="id" order="AFTER">
+            select last_insert_rowid()
+        </selectKey>
+    </insert>
+
 
 </mapper>

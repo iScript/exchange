@@ -19,8 +19,8 @@ public class CounterConfig {
 
 
     /////////////////////会员号////////////////////////////////
-//    @Value("${counter.id}")
-//    private short id;
+    @Value("${counter.id}")
+    private short id;
 
     /////////////////////UUID 相关配置////////////////////////////////
     @Value("${counter.dataCenterId}")
