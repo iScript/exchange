@@ -2,6 +2,8 @@ package com.ykq.gateway;
 
 
 import lombok.extern.log4j.Log4j2;
+import thirdpart.checksum.ByteCheckSum;
+import thirdpart.codec.BodyCodec;
 
 @Log4j2
 public class GatewayStartup {
@@ -10,10 +12,10 @@ public class GatewayStartup {
 
         GatewayConfig config = new GatewayConfig();
         System.out.println(config);
-//        config.initConfig(GatewayStartup.class.getResource("/").getPath()
-//                + configFileName);
-//        config.setCs(new ByteCheckSum());
-//        config.setBodyCodec(new BodyCodec());
-//        config.startup();
+        config.initConfig(GatewayStartup.class.getResource("/").getPath()
+                + configFileName);
+        config.setCs(new ByteCheckSum());
+        config.setBodyCodec(new BodyCodec());
+        config.startup();
     }
 }

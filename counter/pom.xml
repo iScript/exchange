@@ -105,7 +105,16 @@
 			<artifactId>commons-lang3</artifactId>
 			<version>3.8</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.alipay.sofa</groupId>
+			<artifactId>sofa-rpc-all</artifactId>
+			<version>5.7.6</version>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-core</artifactId>
+			<version>3.8.5</version>
+		</dependency>
 <!--		<dependency>-->
 <!--			<groupId>com.baidu.aip</groupId>-->
 <!--			<artifactId>java-sdk</artifactId>-->

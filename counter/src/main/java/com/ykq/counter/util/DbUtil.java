@@ -137,6 +137,47 @@ public class DbUtil {
                 ImmutableMap.of("uid", uid, "code", code));
     }
 
+    public static void addPosi(long uid, int code, long volume, long price) {
+        //持仓是否存在
+        PosiInfo posiInfo = getPosi(uid, code);
+        if (posiInfo == null) {
+            //新增一条持仓
+            insertPosi(uid, code, volume, price);
+        } else {
+            //修改持仓
+            posiInfo.setCount(posiInfo.getCount() + volume);
+            posiInfo.setCost(posiInfo.getCost() + price * volume);
+//            if(posiInfo.getCount() == 0){
+//                deletePosi(posi);
+//            }else {
+            updatePosi(posiInfo);
+//            }
+
+        }
+    }
+
+    public static void minusPosi(long uid, int code, long volume, long price) {
+        addPosi(uid, code, -volume, price);
+    }
+
+    private static void updatePosi(PosiInfo posiInfo) {
+        dbUtil.getSqlSessionTemplate().insert("orderMapper.updatePosi",
+                ImmutableMap.of("uid", posiInfo.getUid(),
+                        "code", posiInfo.getCode(),
+                        "count", posiInfo.getCount(),
+                        "cost", posiInfo.getCost())
+        );
+    }
+
+    private static void insertPosi(long uid, int code, long volume, long price) {
+        dbUtil.getSqlSessionTemplate().insert("orderMapper.insertPosi",
+                ImmutableMap.of("uid", uid,
+                        "code", code,
+                        "count", volume,
+                        "cost", volume * price)
+        );
+    }
+
     //////////////////////////////委托类////////////////////////////////////////
     public static List<OrderInfo> getOrderList(long uid) {
         //查缓存
