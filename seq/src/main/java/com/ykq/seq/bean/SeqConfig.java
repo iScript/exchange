@@ -52,7 +52,7 @@ public class SeqConfig {
         //TODO 3.启动下游广播
 
         //TODO 4.初始化网关连接
-        //startupFetch();
+        startupFetch();
 
 
     }
@@ -108,7 +108,7 @@ public class SeqConfig {
         }
 
         //2.定时抓取数据的任务
-        //new Timer().schedule(new FetchTask(this),5000,1000);
+        new Timer().schedule(new FetchTask(this),5000,1000);
 
 
     }
