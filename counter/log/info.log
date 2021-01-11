@@ -1,47 +1,40 @@
-03:56:33.093 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h1m27s756ms).
-05:53:50.477 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h56m16s208ms).
-15:20:05.700 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9h26m15s225ms).
-15:29:38.546 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-15:29:38.552 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-15:44:06.013 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.104 with PID 94140 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
-15:44:06.021 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
-15:44:07.263 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
-15:44:07.264 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:44:07.264 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
-15:44:07.329 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:44:07.930 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
-15:44:07.950 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-15:44:10.870 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-15:44:10.900 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :2969ms
-15:44:11.366 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
-15:44:11.412 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 5.844 seconds (JVM running for 6.585)
-15:44:22.931 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-15:44:51.538 [http-nio-8090-exec-7] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.exceptions.PersistenceException: 
-### Error querying database.  Cause: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such column: t.ocount)
-### The error may exist in file [/Users/ykq/Desktop/code/exchange/counter/target/classes/mapper/orderMapper.xml]
-### The error may involve orderMapper.queryTrade
-### The error occurred while executing a query
-### SQL: select t.id,t.uid,t.code,s.name,t.direction,t.type,t.price,t.ocount,t.status,t.date,t.time from t_trade t,t_stock s         where t.uid=? and t.code = s.code
-### Cause: org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such column: t.ocount)] with root cause
-org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no such column: t.ocount)
-	at org.sqlite.core.DB.newSQLException(DB.java:1012) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.core.DB.newSQLException(DB.java:1024) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.core.DB.throwex(DB.java:989) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.core.NativeDB.prepare_utf8(Native Method) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.core.NativeDB.prepare(NativeDB.java:134) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.core.DB.prepare(DB.java:257) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.core.CorePreparedStatement.<init>(CorePreparedStatement.java:45) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.jdbc3.JDBC3PreparedStatement.<init>(JDBC3PreparedStatement.java:30) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.jdbc4.JDBC4PreparedStatement.<init>(JDBC4PreparedStatement.java:25) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.jdbc4.JDBC4Connection.prepareStatement(JDBC4Connection.java:35) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.jdbc3.JDBC3Connection.prepareStatement(JDBC3Connection.java:241) ~[sqlite-jdbc-3.34.0.jar:?]
-	at org.sqlite.jdbc3.JDBC3Connection.prepareStatement(JDBC3Connection.java:205) ~[sqlite-jdbc-3.34.0.jar:?]
-	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:337) ~[HikariCP-3.4.5.jar:?]
-	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java) ~[HikariCP-3.4.5.jar:?]
-	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:86) ~[mybatis-3.5.4.jar:3.5.4]
-	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88) ~[mybatis-3.5.4.jar:3.5.4]
-	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59) ~[mybatis-3.5.4.jar:3.5.4]
-	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:87) ~[mybatis-3.5.4.jar:3.5.4]
+14:02:46.086 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98702 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:02:56.120 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:02:58.291 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:02:58.292 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:02:58.292 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:02:58.396 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:02:59.041 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+14:05:16.509 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98734 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:05:26.532 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:05:28.395 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:05:28.396 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:05:28.396 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:05:28.492 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:05:29.404 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:05:29.429 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:05:30.484 [restartedMain] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLException: path to '/Users/ykq/Desktop/code/exchange/counter/counter.db': '/Users/ykq' does not exist
+	at org.sqlite.SQLiteConnection.open(SQLiteConnection.java:215) ~[sqlite-jdbc-3.34.0.jar:?]
+	at org.sqlite.SQLiteConnection.<init>(SQLiteConnection.java:61) ~[sqlite-jdbc-3.34.0.jar:?]
+	at org.sqlite.jdbc3.JDBC3Connection.<init>(JDBC3Connection.java:28) ~[sqlite-jdbc-3.34.0.jar:?]
+	at org.sqlite.jdbc4.JDBC4Connection.<init>(JDBC4Connection.java:21) ~[sqlite-jdbc-3.34.0.jar:?]
+	at org.sqlite.JDBC.createConnection(JDBC.java:115) ~[sqlite-jdbc-3.34.0.jar:?]
+	at org.sqlite.JDBC.connect(JDBC.java:90) ~[sqlite-jdbc-3.34.0.jar:?]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:560) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.5.jar:?]
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:158) ~[spring-jdbc-5.3.2.jar:5.3.2]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:116) ~[spring-jdbc-5.3.2.jar:5.3.2]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:79) ~[spring-jdbc-5.3.2.jar:5.3.2]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:80) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:67) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336) ~[mybatis-3.5.4.jar:3.5.4]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86) ~[mybatis-3.5.4.jar:3.5.4]
 	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) ~[mybatis-3.5.4.jar:3.5.4]
 	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) ~[mybatis-3.5.4.jar:3.5.4]
 	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) ~[mybatis-3.5.4.jar:3.5.4]
@@ -49,53 +42,195 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83) ~[mybatis-3.5.4.jar:3.5.4]
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147) ~[mybatis-3.5.4.jar:3.5.4]
 	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.4.jar:3.5.4]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:135) ~[mybatis-3.5.4.jar:3.5.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_151]
 	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:426) ~[mybatis-spring-2.0.4.jar:2.0.4]
 	at com.sun.proxy.$Proxy70.selectList(Unknown Source) ~[?:?]
-	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:223) ~[mybatis-spring-2.0.4.jar:2.0.4]
-	at com.ykq.counter.util.DbUtil.getTradeList(DbUtil.java:170) ~[classes/:?]
-	at com.ykq.counter.service.OrderServiceImpl.getTradeList(OrderServiceImpl.java:38) ~[classes/:?]
-	at com.ykq.counter.controller.OrderController.tradeQuery(OrderController.java:57) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:215) ~[mybatis-spring-2.0.4.jar:2.0.4]
+	at com.ykq.counter.util.DbUtil.queryAllSotckInfo(DbUtil.java:257) ~[classes/:?]
+	at com.ykq.counter.cache.StockCache.createInvertIndex(StockCache.java:36) ~[classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_151]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:389) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:333) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:157) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:429) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1780) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:609) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) [spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) [spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) [spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:944) [spring-beans-5.3.2.jar:5.3.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:923) [spring-context-5.3.2.jar:5.3.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:588) [spring-context-5.3.2.jar:5.3.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144) [spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767) [spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759) [spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426) [spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326) [spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-2.4.1.jar:2.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-2.4.1.jar:2.4.1]
+	at com.ykq.counter.CounterApplication.main(CounterApplication.java:29) [classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_151]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.4.1.jar:2.4.1]
+14:05:30.529 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+14:10:20.002 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98791 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:10:30.027 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:10:32.255 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:10:32.256 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:10:32.256 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:10:32.360 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:10:33.357 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:10:33.382 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:10:34.184 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:10:34.226 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :868ms
+14:10:39.800 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:10:40.158 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:10:40.218 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 35.869 seconds (JVM running for 42.021)
+14:18:14.626 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:18:14.630 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:18:39.912 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98872 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:18:49.930 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:18:52.484 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:18:52.485 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:18:52.485 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:18:52.589 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:18:53.517 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:18:53.541 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:18:53.777 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:18:53.815 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :298ms
+14:18:59.343 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:18:59.612 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:18:59.671 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 35.335 seconds (JVM running for 41.387)
+14:20:07.011 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:21:11.733 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:21:11.737 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:21:36.963 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98900 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:21:46.981 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:21:48.900 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:21:48.900 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:21:48.901 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:21:48.995 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:21:49.900 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:21:49.922 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:21:50.577 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:21:50.616 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :715ms
+14:21:55.925 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:21:56.466 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:21:56.530 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 35.164 seconds (JVM running for 41.236)
+14:22:07.124 [http-nio-8090-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:22:52.512 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:22:52.515 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:23:17.680 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98919 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:23:27.703 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:23:29.816 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:23:29.817 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:23:29.817 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:23:29.919 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:23:30.861 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:23:30.888 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:23:31.507 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:23:31.553 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :692ms
+14:23:36.865 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:23:37.436 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:23:37.501 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 35.419 seconds (JVM running for 41.476)
+14:25:02.457 [http-nio-8090-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:25:47.674 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:25:47.678 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:26:13.586 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98975 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:26:23.606 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:26:25.538 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:26:25.538 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:26:25.539 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:26:25.629 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:26:26.508 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:26:26.530 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:26:26.806 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:26:26.846 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :338ms
+14:26:32.205 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:26:32.664 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:26:32.740 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 34.814 seconds (JVM running for 41.012)
+14:26:39.961 [http-nio-8090-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:27:44.263 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:27:44.267 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:28:09.432 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 98999 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:28:19.453 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:28:21.386 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:28:21.387 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:28:21.387 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:28:21.477 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:28:22.341 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:28:22.362 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:28:22.820 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:28:22.874 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :532ms
+14:28:28.222 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:28:28.740 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:28:28.803 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 34.942 seconds (JVM running for 40.965)
+14:28:33.654 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:32:46.889 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:32:46.893 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:33:12.333 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 99028 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:33:22.355 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:33:24.795 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:33:24.795 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:33:24.796 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:33:24.887 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:33:25.738 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:33:25.759 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:33:26.447 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:33:26.486 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :748ms
+14:33:31.997 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:33:32.262 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:33:32.322 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 35.647 seconds (JVM running for 41.729)
+14:33:37.291 [http-nio-8090-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:33:37.335 [http-nio-8090-exec-2] ERROR com.ykq.counter.controller.GlobalExceptionHandler - 
+org.springframework.web.bind.MissingServletRequestParameterException: Required short parameter 'type' is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:204) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:170) ~[spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137) ~[spring-web-5.3.2.jar:5.3.2]
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.2.jar:5.3.2]
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.2.jar:5.3.2]
 	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.2.jar:5.3.2]
 	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at com.ykq.counter.filter.SessionCheckFilter.doFilter(SessionCheckFilter.java:51) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061) [spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961) [spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.2.jar:5.3.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) [spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) [tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.2.jar:5.3.2]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [tomcat-embed-core-9.0.41.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at com.ykq.counter.filter.SessionCheckFilter.doFilter(SessionCheckFilter.java:64) [classes/:?]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.2.jar:5.3.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.2.jar:5.3.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [tomcat-embed-core-9.0.41.jar:9.0.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.41.jar:9.0.41]
@@ -108,105 +243,48 @@ org.sqlite.SQLiteException: [SQLITE_ERROR] SQL error or missing database (no suc
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) [tomcat-embed-core-9.0.41.jar:9.0.41]
 	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_271]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_271]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_151]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_151]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_271]
-15:46:05.042 [http-nio-8090-exec-4] ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.ykq.counter.util.DbUtil.saveOrder(DbUtil.java:206) ~[classes/:?]
-	at com.ykq.counter.service.OrderServiceImpl.sendOrder(OrderServiceImpl.java:63) ~[classes/:?]
-	at com.ykq.counter.controller.OrderController.order(OrderController.java:72) ~[classes/:?]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
-	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:894) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1061) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:961) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.2.jar:5.3.2]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.41.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at com.ykq.counter.filter.SessionCheckFilter.doFilter(SessionCheckFilter.java:51) ~[classes/:?]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.2.jar:5.3.2]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_271]
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_271]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.41.jar:9.0.41]
-	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_271]
-15:46:40.585 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-15:46:40.588 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-15:46:48.885 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.104 with PID 94206 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
-15:46:48.892 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
-15:46:49.955 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
-15:46:49.956 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:46:49.956 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
-15:46:50.015 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:46:50.486 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
-15:46:50.497 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-15:46:51.329 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-15:46:51.358 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :872ms
-15:46:51.753 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
-15:46:51.808 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 3.281 seconds (JVM running for 3.826)
-15:46:55.058 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-15:46:55.398 [http-nio-8090-exec-1] INFO  com.ykq.counter.service.OrderServiceImpl - 
-15:48:56.310 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-15:48:56.313 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-15:49:04.725 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.104 with PID 94249 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
-15:49:04.733 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
-15:49:05.782 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
-15:49:05.782 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:49:05.783 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
-15:49:05.841 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:49:06.439 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
-15:49:06.452 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-15:49:07.569 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-15:49:07.602 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :1162ms
-15:49:08.011 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
-15:49:08.063 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 3.791 seconds (JVM running for 4.455)
-15:49:10.981 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-15:49:11.338 [http-nio-8090-exec-1] INFO  com.ykq.counter.service.OrderServiceImpl - 
-16:11:26.533 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s878ms).
-16:21:15.649 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m49s116ms).
-16:31:34.402 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s811ms).
-16:32:04.188 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s786ms), soft-evicting connections from pool.
-16:41:52.595 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s407ms).
-16:51:41.114 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s519ms).
-17:06:38.335 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:06:38.339 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_151]
+14:36:56.681 [http-nio-8090-exec-5] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:37:12.629 [http-nio-8090-exec-6] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:37:39.080 [http-nio-8090-exec-7] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:39:44.497 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:39:44.500 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:40:10.649 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 99080 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:40:20.674 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:40:23.212 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:40:23.213 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:40:23.213 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:40:23.308 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:40:24.237 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:40:24.260 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:40:24.704 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:40:24.751 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :513ms
+14:40:30.350 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:40:30.853 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:40:30.928 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 35.916 seconds (JVM running for 42.305)
+14:40:34.087 [http-nio-8090-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:40:34.359 [http-nio-8090-exec-2] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:41:30.193 [http-nio-8090-exec-3] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:41:58.326 [http-nio-8090-exec-4] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:43:32.189 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:43:32.193 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:43:58.145 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 99129 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:44:08.165 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:44:10.070 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:44:10.071 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:44:10.071 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:44:10.165 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:44:11.028 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:44:11.049 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:44:11.260 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:44:11.311 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :283ms
+14:44:16.893 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:44:17.210 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:44:17.300 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 34.721 seconds (JVM running for 40.851)
+14:44:25.958 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:44:26.173 [http-nio-8090-exec-1] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:45:46.991 [http-nio-8090-exec-5] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:46:00.060 [http-nio-8090-exec-6] INFO  com.ykq.counter.service.OrderServiceImpl - 

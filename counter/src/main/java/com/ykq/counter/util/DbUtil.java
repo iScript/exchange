@@ -236,7 +236,7 @@ public class DbUtil {
         param.put("tcount", 0);     // 成交量
         param.put("status", OrderStatus.NOT_SET.getCode());
 
-        param.put("data", TimeFormatUtil.yyyyMMdd(orderCmd.timestamp));
+        param.put("date", TimeFormatUtil.yyyyMMdd(orderCmd.timestamp));
         param.put("time", TimeFormatUtil.hhMMss(orderCmd.timestamp));
         //System.out.println(TimeFormatUtil.yyyyMMdd(orderCmd.timestamp));
         int count = dbUtil.getSqlSessionTemplate().insert(

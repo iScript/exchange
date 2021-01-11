@@ -1,22 +1,17 @@
-15:49:04.725 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_271 on 192.168.10.104 with PID 94249 (/Users/ykq/Desktop/code/exchange/counter/target/classes started by ykq in /Users/ykq/Desktop/code/exchange/counter)
-15:49:04.733 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
-15:49:05.782 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
-15:49:05.782 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-15:49:05.783 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
-15:49:05.841 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-15:49:06.439 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
-15:49:06.452 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-15:49:07.569 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-15:49:07.602 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :1162ms
-15:49:08.011 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
-15:49:08.063 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 3.791 seconds (JVM running for 4.455)
-15:49:10.981 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-15:49:11.338 [http-nio-8090-exec-1] INFO  com.ykq.counter.service.OrderServiceImpl - 
-16:11:26.533 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s878ms).
-16:21:15.649 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m49s116ms).
-16:31:34.402 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s811ms).
-16:32:04.188 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Retrograde clock change detected (housekeeper delta=29s786ms), soft-evicting connections from pool.
-16:41:52.595 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s407ms).
-16:51:41.114 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m48s519ms).
-17:06:38.335 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-17:06:38.339 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:43:58.145 [restartedMain] INFO  com.ykq.counter.CounterApplication - Starting CounterApplication using Java 1.8.0_151 on sigsoftdeMacBook-Pro.local with PID 99129 (/Users/sig/Desktop/code/exchange/counter/target/classes started by sig in /Users/sig/Desktop/code/exchange/counter)
+14:44:08.165 [restartedMain] INFO  com.ykq.counter.CounterApplication - No active profile set, falling back to default profiles: default
+14:44:10.070 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8090"]
+14:44:10.071 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:44:10.071 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+14:44:10.165 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:44:11.028 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock from db
+14:44:11.049 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:44:11.260 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:44:11.311 [restartedMain] INFO  com.ykq.counter.cache.StockCache - load stock finish,take :283ms
+14:44:16.893 [vert.x-eventloop-thread-0] INFO  thirdpart.tcp.TcpDirectSender - connect success to remote 127.0.0.1:8091
+14:44:17.210 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8090"]
+14:44:17.300 [restartedMain] INFO  com.ykq.counter.CounterApplication - Started CounterApplication in 34.721 seconds (JVM running for 40.851)
+14:44:25.958 [http-nio-8090-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:44:26.173 [http-nio-8090-exec-1] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:45:46.991 [http-nio-8090-exec-5] INFO  com.ykq.counter.service.OrderServiceImpl - 
+14:46:00.060 [http-nio-8090-exec-6] INFO  com.ykq.counter.service.OrderServiceImpl - 

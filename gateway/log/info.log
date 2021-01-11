@@ -1,0 +1,10 @@
+10:05:52.402 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.GatewayConfig - gateway startup success at port : 8091
+14:36:56.764 [vert.x-eventloop-thread-1] ERROR com.ykq.gateway.handler.ConnHandler - recv error msgDst dst: 1 from client:127.0.0.1:52646
+14:37:12.630 [vert.x-eventloop-thread-1] ERROR com.ykq.gateway.handler.ConnHandler - illegal byte body exist from client:127.0.0.1:52646
+14:37:39.081 [vert.x-eventloop-thread-1] ERROR com.ykq.gateway.handler.ConnHandler - illegal byte body exist from client:127.0.0.1:52646
+14:40:34.612 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.handler.MsgHandler - recv cmd: OrderCmd(type=NEW_ORDER, timestamp=1234567878, mid=100, uid=9, code=9, direction=BUY, price=100, volume=10, orderType=LIMIT, oid=429496729607)
+14:41:30.196 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.handler.MsgHandler - recv cmd: OrderCmd(type=NEW_ORDER, timestamp=1234567878, mid=100, uid=9, code=9, direction=BUY, price=100, volume=10, orderType=LIMIT, oid=429496729608)
+14:41:58.327 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.handler.MsgHandler - recv cmd: OrderCmd(type=NEW_ORDER, timestamp=1234567878, mid=100, uid=9, code=9, direction=BUY, price=100, volume=10, orderType=LIMIT, oid=429496729609)
+14:44:26.193 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.handler.MsgHandler - recv cmd: OrderCmd(type=NEW_ORDER, timestamp=1234567878, mid=100, uid=9, code=9, direction=BUY, price=100, volume=10, orderType=LIMIT, oid=429496729610)
+14:45:46.993 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.handler.MsgHandler - recv cmd: OrderCmd(type=NEW_ORDER, timestamp=1610347519, mid=100, uid=9, code=9, direction=BUY, price=100, volume=10, orderType=LIMIT, oid=429496729611)
+14:46:00.078 [vert.x-eventloop-thread-1] INFO  com.ykq.gateway.handler.MsgHandler - recv cmd: OrderCmd(type=NEW_ORDER, timestamp=1610347519000, mid=100, uid=9, code=9, direction=BUY, price=100, volume=10, orderType=LIMIT, oid=429496729612)

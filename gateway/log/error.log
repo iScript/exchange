@@ -1,0 +1,2 @@
+14:37:12.630 [vert.x-eventloop-thread-1] ERROR com.ykq.gateway.handler.ConnHandler - illegal byte body exist from client:127.0.0.1:52646
+14:37:39.081 [vert.x-eventloop-thread-1] ERROR com.ykq.gateway.handler.ConnHandler - illegal byte body exist from client:127.0.0.1:52646

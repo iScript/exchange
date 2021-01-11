@@ -63,6 +63,7 @@ public class OrderServiceImpl implements IOrderService {
 
         //1.入库
         int oid = DbUtil.saveOrder(orderCmd);
+        System.out.println(oid);
         if (oid < 0) {
             return false;
         } else {

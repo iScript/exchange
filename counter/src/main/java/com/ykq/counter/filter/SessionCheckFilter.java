@@ -22,13 +22,14 @@ public class SessionCheckFilter implements Filter {
     private AccountService accountService;
 
     private Set<String> whiteRootPaths = Sets.newHashSet(
-            "login","msgsocket","test"
+            "login","msgsocket","test","api"
     );
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         //解决ajax跨域问题
         HttpServletResponse response = (HttpServletResponse) servletResponse;
+
         response.setHeader("Access-Control-Allow-Origin","*");
 
         //filterChain.doFilter(servletRequest, servletResponse);
@@ -38,6 +39,8 @@ public class SessionCheckFilter implements Filter {
         //  /login/pwdsetting
         String path = request.getRequestURI();
         String[] split = path.split("/");
+//        System.out.println(path);
+//        System.out.println(split.length);
         if(split.length < 2){   //非法url
             request.getRequestDispatcher(
                     "/login/loginfail"
@@ -62,6 +65,7 @@ public class SessionCheckFilter implements Filter {
 
 
         }
+
 
 
     }

@@ -38,6 +38,7 @@ public class TcpDirectSender {
         new Thread(() -> {
             while (true) {
                 try {
+                    //获取并移除此双端队列表示的队列的头部（即此双端队列的第一个元素），如有必要将在指定的等待时间内等待可用元素。
                     Buffer msgBuffer = sendCache.poll(5, TimeUnit.SECONDS);
                     if (msgBuffer != null
                             && msgBuffer.length() > 0
@@ -54,9 +55,11 @@ public class TcpDirectSender {
     }
 
     //socket自己去缓存中取数据进行发送
+    //链表的双端阻塞队列，线程安全
     private final BlockingQueue<Buffer> sendCache = new LinkedBlockingDeque<>();
 
     public boolean send(Buffer bufferMsg) {
+
         return sendCache.offer(bufferMsg);
     }
 
