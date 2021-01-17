@@ -1,5 +1,7 @@
 package com.ykq.gateway;
 
+import com.alipay.sofa.rpc.config.ProviderConfig;
+import com.alipay.sofa.rpc.config.ServerConfig;
 import com.ykq.gateway.handler.ConnHandler;
 import io.vertx.core.Vertx;
 import io.vertx.core.net.NetServer;
@@ -11,6 +13,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import thirdpart.checksum.ICheckSum;
 import thirdpart.codec.IBodyCodec;
+import thirdpart.fetchsurv.IFetchService;
 
 import java.io.File;
 
@@ -22,6 +25,9 @@ public class GatewayConfig {
 
     //端口
     private int recvPort;
+
+    //排队机通信Provider端口
+    private int fetchServPort;
 
 
     //TODO 柜台列表 数据库连接
@@ -53,7 +59,24 @@ public class GatewayConfig {
         //1.启动TCP服务监听
         initRecv();
 
-        //TODO 2.排队机交互
+        //2.排队机交互
+        initFetchServ();
+    }
+
+    private void initFetchServ() {
+        ServerConfig rpcConfig = new ServerConfig()
+                .setPort(fetchServPort)
+                .setProtocol("bolt");
+
+        //implement IFetchService
+        ProviderConfig<IFetchService> providerConfig = new ProviderConfig<IFetchService>()
+                .setInterfaceId(IFetchService.class.getName())
+                .setRef(() -> OrderCmdContainer.getInstance().getAll())
+                .setServer(rpcConfig);
+        providerConfig.export();
+
+        log.info("gateway startup fetchServ success at port : {}",fetchServPort);
+
     }
 
     private void initRecv() {
