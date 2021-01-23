@@ -1,11 +1,16 @@
 package com.ykq.seq.bean;
 
+import com.alipay.sofa.jraft.util.Bits;
+import com.alipay.sofa.jraft.util.BytesUtil;
 import com.google.common.collect.Lists;
+import io.vertx.core.buffer.Buffer;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import thirdpart.bean.CmdPack;
 import thirdpart.fetchsurv.IFetchService;
 import thirdpart.order.OrderCmd;
 import thirdpart.order.OrderDirection;
@@ -117,7 +122,70 @@ public class FetchTask extends TimerTask {
         });
 
         //存储到KV Store，发送到撮合核心
+        try {
 
+            //1.生成Packetno
+            long packetNo = getPacketNoFromStore();
+
+            //2.入库
+            CmdPack pack = new CmdPack(packetNo, cmds);
+            byte[] serialize = config.getCodec().serialize(pack);
+            insertToKvStore(packetNo, serialize);
+
+            //3.更新packetno+1
+            updatePacketNoInStore(packetNo + 1);
+
+            //4.发送
+            config.getMulticastSender().send(
+                    Buffer.buffer(serialize),
+                    config.getMulticastPort(),
+                    config.getMulticastIp(),
+                    null
+            );
+
+        } catch (Exception e) {
+            log.error("encode cmd packet error", e);
+        }
+
+    }
+
+    /**
+     * 更新PacketNo
+     *
+     * @param packetNo
+     */
+    private void updatePacketNoInStore(long packetNo) {
+        final byte[] bytes = new byte[8];
+        Bits.putLong(bytes, 0, packetNo);
+        config.getNode().getRheaKVStore().put(PACKET_NO_KEY, bytes);
+    }
+
+    /**
+     * 保存数据到KV Store
+     *
+     * @param packetNo
+     * @param serialize
+     */
+    private void insertToKvStore(long packetNo, byte[] serialize) {
+        byte[] key = new byte[8];
+        Bits.putLong(key, 0, packetNo);
+        config.getNode().getRheaKVStore().put(key, serialize);
+    }
+
+    private static final byte[] PACKET_NO_KEY = BytesUtil.writeUtf8("seq_pqcket_no");
+
+    /**
+     * 获取PacketNo
+     *
+     * @return
+     */
+    private long getPacketNoFromStore() {
+        final byte[] bPacketNo = config.getNode().getRheaKVStore().bGet(PACKET_NO_KEY);
+        long packetNo = 0;
+        if (ArrayUtils.isNotEmpty(bPacketNo)) {
+            packetNo = Bits.getLong(bPacketNo, 0);
+        }
+        return packetNo;
     }
 
     private int compareVolume(OrderCmd o1, OrderCmd o2) {
